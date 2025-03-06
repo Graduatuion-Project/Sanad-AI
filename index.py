@@ -5,7 +5,7 @@ import os
 from farasa.segmenter import FarasaSegmenter
 
 # تحميل ملف JSON
-json_path = "D:/Sanad/Sanad-AI/metadata.json"  # تأكد من وضع المسار الصحيح
+json_path = "D:/Sanad/Sanad-AI/metadata.json"   
 
 if not os.path.exists(json_path):
     print(f"❌ الملف غير موجود في: {json_path}")
@@ -14,13 +14,13 @@ if not os.path.exists(json_path):
 with open(json_path, "r", encoding="utf-8") as file:
     word_to_video = json.load(file)
 
-# تهيئة قاطع الكلمات
+#  تقسيم الكلمات
 farasa_segmenter = FarasaSegmenter(interactive=True)
 
 def preprocess_text(text):
     """تنظيف النص وإزالة التشكيل والأحرف الخاصة."""
-    text = text.strip()  # إزالة المسافات الزائدة
-    text = re.sub(r'[^\w\s]', '', text)  # إزالة التشكيل والأحرف الخاصة
+    text = text.strip()  # إزالة المسافات 
+    text = re.sub(r'[^\w\s]', '', text)  # إزالة التشكيل  
     return text
 
 def search_videos(sentence):
@@ -47,20 +47,18 @@ def play_video(video_path):
             break
         cv2.imshow("Video", frame)
         
-        # اضغط على 'q' للخروج من الفيديو
         if cv2.waitKey(25) & 0xFF == ord('q'):
             break
 
     cap.release()
     cv2.destroyAllWindows()
 
-# تجربة الكود
-sentence = "أب"
+sentence = " محمد رسول الله "
 videos = search_videos(sentence)
 
 if videos:
     print("✅ الفيديوهات المرتبطة:", videos)
     for video in videos:
-        play_video(video)  # تشغيل الفيديو
+        play_video(video)  
 else:
     print("❌ لا يوجد فيديو مرتبط بهذه الكلمات.")
