@@ -5,7 +5,7 @@ import os
 from farasa.segmenter import FarasaSegmenter
 
 # تحميل ملف JSON
-json_path = "D:/Sanad/Sanad-AI/metadata.json"   
+json_path = "D:\Sanad\Sanad-AI\metadata.json"   
 
 if not os.path.exists(json_path):
     print(f"❌ الملف غير موجود في: {json_path}")
