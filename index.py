@@ -53,7 +53,7 @@ def play_video(video_path):
     cap.release()
     cv2.destroyAllWindows()
 
-sentence = " محمد رسول الله "
+sentence = "مبروك"
 videos = search_videos(sentence)
 
 if videos:
@@ -62,3 +62,7 @@ if videos:
         play_video(video)  
 else:
     print("❌ لا يوجد فيديو مرتبط بهذه الكلمات.")
+
+
+    # mai started coding
+print("hello hana")
