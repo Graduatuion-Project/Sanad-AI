@@ -63,4 +63,9 @@ if videos:
 else:
     print("❌ لا يوجد فيديو مرتبط بهذه الكلمات.")
 
+# Next Additions in the next week
+#  1 - Fuzzy Matching
+#  2 - Fasttext
+#  3 - Add New file to add not exisiting words in db to add new videos
+#  4 - Make sentence as an input from the user
 
