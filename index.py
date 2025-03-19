@@ -8,7 +8,7 @@ from farasa.segmenter import FarasaSegmenter
 json_path = "D:\Sanad\Sanad-AI\metadata.json"   
 
 if not os.path.exists(json_path):
-    print(f"❌ الملف غير موجود في: {json_path}")
+    print(" الملف غير موجود")
     exit()
 
 with open(json_path, "r", encoding="utf-8") as file:
@@ -18,13 +18,13 @@ with open(json_path, "r", encoding="utf-8") as file:
 farasa_segmenter = FarasaSegmenter(interactive=True)
 
 def preprocess_text(text):
-    """تنظيف النص وإزالة التشكيل والأحرف الخاصة."""
+
     text = text.strip()  # إزالة المسافات 
     text = re.sub(r'[^\w\s]', '', text)  # إزالة التشكيل  
     return text
 
 def search_videos(sentence):
-    """البحث عن الفيديوهات المتعلقة بالجملة."""
+
     sentence = preprocess_text(sentence)  # تنظيف الجملة
     if sentence in word_to_video:
         return [word_to_video[sentence]]  # البحث عن الجملة كاملة
@@ -34,9 +34,9 @@ def search_videos(sentence):
     return videos
 
 def play_video(video_path):
-    """تشغيل الفيديو باستخدام OpenCV."""
+
     if not os.path.exists(video_path):
-        print(f"❌ الفيديو غير موجود: {video_path}")
+        print(f" الفيديو غير موجود: {video_path}")
         return
 
     cap = cv2.VideoCapture(video_path)
@@ -53,7 +53,7 @@ def play_video(video_path):
     cap.release()
     cv2.destroyAllWindows()
 
-sentence = "اخوان"
+sentence = "تمام"
 videos = search_videos(sentence)
 
 if videos:
@@ -61,7 +61,7 @@ if videos:
     for video in videos:
         play_video(video)  
 else:
-    print("❌ لا يوجد فيديو مرتبط بهذه الكلمات.")
+    print(" لا يوجد فيديو مرتبط بهذه الكلمات.")
 
 # Next Additions in the next week
 #  1 - Fuzzy Matching
