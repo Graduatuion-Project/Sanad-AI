@@ -5,7 +5,7 @@ import os
 from farasa.segmenter import FarasaSegmenter
 
 # تحميل ملف JSON
-json_path = "D:/Sanad/Sanad-AI/metadata.json"   
+json_path = "D:\Sanad\Sanad-AI\metadata.json"   
 
 if not os.path.exists(json_path):
     print(f"❌ الملف غير موجود في: {json_path}")
@@ -53,7 +53,7 @@ def play_video(video_path):
     cap.release()
     cv2.destroyAllWindows()
 
-sentence = " محمد رسول الله "
+sentence = "اخوان"
 videos = search_videos(sentence)
 
 if videos:
@@ -68,3 +68,4 @@ else:
 #  2 - Fasttext
 #  3 - Add New file to add not exisiting words in db to add new videos
 #  4 - Make sentence as an input from the user
+
