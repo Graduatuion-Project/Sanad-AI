@@ -53,7 +53,7 @@ def play_video(video_path):
     cap.release()
     cv2.destroyAllWindows()
 
-sentence = "تمام"
+sentence = input(" أدخل الجملة: ")
 videos = search_videos(sentence)
 
 if videos:
