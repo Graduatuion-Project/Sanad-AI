@@ -10,7 +10,6 @@ class SignLanguageTranslator:
         self.signs_db = self.load_dictionary()
         self.stop_words = self.get_stop_words()
         self.setup_synonym_map()
-        self.displayed_videos = set()  # لتتبع الفيديوهات المعروضة
 
     def load_dictionary(self):
         with open("enhanced_metadata.json", "r", encoding="utf-8") as f:
@@ -44,24 +43,24 @@ class SignLanguageTranslator:
 
     def find_sign_match(self, word):
         norm_word = self.normalize_word(word)
-        
-        # البحث في الكلمات الرئيسية أولاً
+        if not norm_word:
+            return None, None
+
+        # التحقق إذا الكلمة هي الكلمة الرئيسية
         for main_word in self.signs_db:
             if self.normalize_word(main_word) == norm_word:
                 return main_word, self.signs_db[main_word]
-        
-        # ثم البحث في المرادفات
+
+        # التحقق إذا الكلمة مرادف
         if norm_word in self.synonym_to_main:
             main_word = self.synonym_to_main[norm_word]
             return main_word, self.signs_db[main_word]
-        
+
         return None, None
 
     def process_sentence(self, sentence):
         if not sentence.strip():
             return False
-
-        self.displayed_videos.clear()  # مسح الفيديوهات المعروضة سابقاً
 
         tokens = self.farasa.segment(sentence).split()
 
@@ -84,22 +83,13 @@ class SignLanguageTranslator:
 
         filtered = [w for w in fixed_tokens if self.normalize_word(w) not in self.stop_words]
 
-        # تخزين الكلمات الفريدة فقط
-        unique_words = set()
-        for word in filtered:
-            norm_word = self.normalize_word(word)
-            if norm_word not in unique_words:
-                unique_words.add(norm_word)
-
-        # البحث عن مطابقات للكلمات الفريدة فقط
         matches = {}
-        for word in unique_words:
+        for word in filtered:
             main_word, sign_data = self.find_sign_match(word)
-            if sign_data and main_word not in matches:
-                matches[main_word] = {
-                    "input_word": word,
-                    "data": sign_data
-                }
+            if sign_data and main_word:
+                # تخزين الكلمة المدخلة مع بيانات الفيديو، باستخدام الكلمة الرئيسية كمفتاح
+                if main_word not in matches:
+                    matches[main_word] = {"input_word": word, "data": sign_data}
 
         if matches:
             self.play_videos(matches)
@@ -111,13 +101,6 @@ class SignLanguageTranslator:
         for main_word, info in matches.items():
             input_word = info["input_word"]
             main_video_path = info["data"].get("video_path")
-            
-            # تجنب عرض نفس الفيديو أكثر من مرة
-            if main_video_path in self.displayed_videos:
-                continue
-                
-            self.displayed_videos.add(main_video_path)
-            
             resolved_path = self.check_video_exists(main_video_path)
             
             if not resolved_path:
@@ -147,6 +130,7 @@ class SignLanguageTranslator:
                 if 'cap' in locals():
                     cap.release()
                 cv2.destroyAllWindows()
+                cv2.waitKey(500)  # تأخير بسيط بين الفيديوهات
 
     def check_video_exists(self, path):
         if os.path.exists(path):
