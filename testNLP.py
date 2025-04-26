@@ -69,7 +69,7 @@ def find_videos(words, data):
 
 if __name__ == "__main__":
     # تحميل البيانات
-    json_data = load_json("D:/Sanad/Sanad-AI/metadata.json")  # تحديث مسار ملف JSON
+    json_data = load_json("D:/Sanad/Sanad-AI/enhanced_metadata.json")  # تحديث مسار ملف JSON
     stop_words = load_stop_words("stop words.txt")  # استخدم ملفك الفعلي
     
     # إدخال النص من المستخدم
