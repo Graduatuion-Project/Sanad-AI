@@ -16,10 +16,8 @@ class TranslateRequest(BaseModel):
     sentence: str
 
 class SignLanguageTranslator:
-    """A class to translate Arabic text to sign language videos."""
     
     def __init__(self):
-        """Initialize the translator with Farasa, dictionary, and synonym map."""
         try:
             self.farasa = FarasaSegmenter(interactive=True)
         except Exception as e:
@@ -30,12 +28,6 @@ class SignLanguageTranslator:
         self.setup_synonym_map()
 
     def load_dictionary(self):
-        """
-        Load the sign language dictionary from JSON file.
-        
-        Returns:
-            dict: The loaded dictionary, or empty dict if loading fails.
-        """
         try:
             with open("enhanced_metadata.json", "r", encoding="utf-8") as f:
                 data = json.load(f)
@@ -51,40 +43,16 @@ class SignLanguageTranslator:
             return {}
 
     def get_stop_words(self):
-        """
-        Get a set of Arabic stop words to be ignored during translation.
-        
-        Returns:
-            set: Set of stop words.
-        """
         return {
             "في", "من", "إلى", "على", "عن", "أن", "إن", "كان", "كانت",
             "أو", "و", "ثم", "قد", "كل", "كما"
         }
 
     def clean_input(self, sentence):
-        """
-        Clean the input sentence by keeping only Arabic letters and spaces.
-        
-        Args:
-            sentence (str): The input sentence.
-        
-        Returns:
-            str: The cleaned sentence.
-        """
         sentence = re.sub(r'[^\u0600-\u06FF\s]', '', sentence)
         return sentence.strip()
 
     def normalize_word(self, word):
-        """
-        Normalize an Arabic word by removing diacritics and standardizing characters.
-        
-        Args:
-            word (str): The input Arabic word.
-        
-        Returns:
-            str: The normalized word, or empty string if invalid.
-        """
         if not word:
             return ""
         word = re.sub(r'[\u064b-\u065f]', '', word)
@@ -95,9 +63,6 @@ class SignLanguageTranslator:
         return word.strip()
 
     def setup_synonym_map(self):
-        """
-        Create a mapping of normalized synonyms to main words and store normalized main words.
-        """
         self.synonym_to_main = {}
         for main_word, data in self.signs_db.items():
             norm_main = self.normalize_word(main_word)
@@ -109,15 +74,6 @@ class SignLanguageTranslator:
                     self.synonym_to_main[norm_syn] = main_word
 
     def find_sign_match(self, word):
-        """
-        Find a matching sign for a word or its synonym, handling split words.
-        
-        Args:
-            word (str): The input word (possibly split by Farasa).
-        
-        Returns:
-            tuple: (main_word, sign_data) if found, else (None, None).
-        """
         norm_word = self.normalize_word(word)
         if not norm_word:
             return None, None
@@ -136,15 +92,6 @@ class SignLanguageTranslator:
         return None, None
 
     def process_sentence(self, sentence):
-        """
-        Process an Arabic sentence and return matching sign videos data.
-        
-        Args:
-            sentence (str): The input sentence.
-        
-        Returns:
-            dict: Dictionary with matches or error message.
-        """
         sentence = self.clean_input(sentence)
         if not sentence.strip() or not self.farasa:
             return {"status": "error", "message": "الجملة غير صالحة أو Farasa غير متاح"}
@@ -204,12 +151,6 @@ class SignLanguageTranslator:
         }
 
     def play_videos(self, matches):
-        """
-        Play sign language videos for matched words.
-        
-        Args:
-            matches (dict): Dictionary of matched words and their data.
-        """
         cv2.namedWindow("Sign Language", cv2.WINDOW_NORMAL)
         cv2.resizeWindow("Sign Language", 800, 600)
 
@@ -249,15 +190,6 @@ class SignLanguageTranslator:
         cv2.waitKey(500)
 
     def check_video_exists(self, path):
-        """
-        Check if a video file exists in possible locations.
-        
-        Args:
-            path (str): The video file path.
-        
-        Returns:
-            str or None: Resolved path if found, else None.
-        """
         if not path:
             return None
         if os.path.exists(path):
@@ -281,22 +213,12 @@ class SignLanguageTranslator:
 
 @app.post("/translate")
 async def translate_sentence(request: TranslateRequest):
-    """
-    API endpoint to translate an Arabic sentence to sign language video data.
-    
-    Args:
-        request (TranslateRequest): The input sentence.
-    
-    Returns:
-        dict: Translation results or error message.
-    """
+
     translator = SignLanguageTranslator()
     result = translator.process_sentence(request.sentence)
     return result
 
 class SignLanguageGUI:
-    """A simple GUI for the Sign Language Translator."""
-    
     def __init__(self, api_url="http://localhost:8000"):
         """Initialize the GUI with API URL."""
         self.api_url = api_url
@@ -318,7 +240,6 @@ class SignLanguageGUI:
         self.exit_button.pack(pady=10)
 
     def translate(self):
-        """Send sentence to API and process results."""
         sentence = self.entry.get()
         try:
             response = requests.post(f"{self.api_url}/translate", json={"sentence": sentence})
@@ -334,12 +255,9 @@ class SignLanguageGUI:
             messagebox.showerror("خطأ", f"فشل الاتصال بالـ API: {str(e)}")
 
     def run(self):
-        """Run the GUI main loop."""
         self.root.mainloop()
 
 class TestSignLanguageTranslator(unittest.TestCase):
-    """Unit tests for SignLanguageTranslator."""
-    
     def setUp(self):
         self.translator = SignLanguageTranslator()
 
