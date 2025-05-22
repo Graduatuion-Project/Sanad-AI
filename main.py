@@ -1,11 +1,7 @@
+
 import json
-import cv2
 import os
 import re
-import tkinter as tk
-from tkinter import messagebox
-import unittest
-import requests
 from fastapi import FastAPI
 from pydantic import BaseModel
 from farasa.segmenter import FarasaSegmenter
@@ -16,14 +12,22 @@ class TranslateRequest(BaseModel):
     sentence: str
 
 class SignLanguageTranslator:
-    
+    signs_db = None
+    farasa = None
+
     def __init__(self):
-        try:
-            self.farasa = FarasaSegmenter(interactive=True)
-        except Exception as e:
-            print(f"⚠ فشل تهيئة Farasa: {str(e)}")
-            self.farasa = None
-        self.signs_db = self.load_dictionary()
+        if SignLanguageTranslator.signs_db is None:
+            SignLanguageTranslator.signs_db = self.load_dictionary()
+        self.signs_db = SignLanguageTranslator.signs_db
+
+        if SignLanguageTranslator.farasa is None:
+            try:
+                SignLanguageTranslator.farasa = FarasaSegmenter(interactive=True)
+            except Exception as e:
+                print(f"⚠ فشل تهيئة Farasa: {str(e)}")
+                SignLanguageTranslator.farasa = None
+        self.farasa = SignLanguageTranslator.farasa
+
         self.stop_words = self.get_stop_words()
         self.setup_synonym_map()
 
@@ -137,7 +141,10 @@ class SignLanguageTranslator:
             main_word, sign_data = self.find_sign_match(word)
             if sign_data and main_word:
                 if main_word not in matches:
-                    matches[main_word] = {"input_word": word, "data": sign_data}
+                    matches[main_word] = {
+                        "input_word": word,
+                        "video_url": sign_data.get("video_path")
+                    }
 
         if matches:
             return {
@@ -150,138 +157,13 @@ class SignLanguageTranslator:
             "message": f"لا توجد كلمات مدعومة في الجملة: {sentence}"
         }
 
-    def play_videos(self, matches):
-        cv2.namedWindow("Sign Language", cv2.WINDOW_NORMAL)
-        cv2.resizeWindow("Sign Language", 800, 600)
-
-        for main_word, info in matches.items():
-            input_word = info["input_word"]
-            main_video_path = info["data"].get("video_path")
-            resolved_path = self.check_video_exists(main_video_path)
-            
-            if not resolved_path:
-                print(f"\n⚠ ملف الفيديو غير موجود: {main_video_path}")
-                continue
-
-            print(f"\n▶ تشغيل فيديو للكلمة: {input_word} (Path: {resolved_path})")
-            try:
-                cap = cv2.VideoCapture(resolved_path)
-                if not cap.isOpened():
-                    print(f"⚠ فشل فتح ملف الفيديو: {resolved_path}")
-                    continue
-
-                while cap.isOpened():
-                    ret, frame = cap.read()
-                    if not ret:
-                        break
-                    cv2.imshow("Sign Language", frame)
-                    key = cv2.waitKey(30) & 0xFF
-                    if key == ord('q'):
-                        cap.release()
-                        cv2.destroyAllWindows()
-                        return
-                    elif key == ord('p'):
-                        while cv2.waitKey(0) != ord('p'):
-                            pass
-                cap.release()
-            except Exception as e:
-                print(f"⚠ خطأ أثناء التشغيل: {str(e)}")
-        cv2.destroyAllWindows()
-        cv2.waitKey(500)
-
-    def check_video_exists(self, path):
-        if not path:
-            return None
-        if os.path.exists(path):
-            return path
-        try:
-            abs_path = os.path.abspath(path)
-            if os.path.exists(abs_path):
-                return abs_path
-        except:
-            pass
-        base_name = os.path.basename(path)
-        if os.path.exists(base_name):
-            return base_name
-        try:
-            resource_path = os.path.join("Sanad-Resources", "Resized videos", base_name)
-            if os.path.exists(resource_path):
-                return resource_path
-        except:
-            pass
-        return None
-
 @app.post("/translate")
 async def translate_sentence(request: TranslateRequest):
-
     translator = SignLanguageTranslator()
     result = translator.process_sentence(request.sentence)
     return result
 
-class SignLanguageGUI:
-    def __init__(self, api_url="http://localhost:8000"):
-        """Initialize the GUI with API URL."""
-        self.api_url = api_url
-        self.translator = SignLanguageTranslator()
-        self.root = tk.Tk()
-        self.root.title("نظام سند - لغة الإشارة")
-        self.root.geometry("600x400")
-        
-        self.label = tk.Label(self.root, text="أدخل جملة باللغة العربية:", font=("Arial", 14))
-        self.label.pack(pady=10)
-        
-        self.entry = tk.Entry(self.root, width=50, font=("Arial", 12))
-        self.entry.pack(pady=10)
-        
-        self.translate_button = tk.Button(self.root, text="ترجم", command=self.translate, font=("Arial", 12))
-        self.translate_button.pack(pady=10)
-        
-        self.exit_button = tk.Button(self.root, text="خروج", command=self.root.quit, font=("Arial", 12))
-        self.exit_button.pack(pady=10)
-
-    def translate(self):
-        sentence = self.entry.get()
-        try:
-            response = requests.post(f"{self.api_url}/translate", json={"sentence": sentence})
-            response.raise_for_status()
-            result = response.json()
-            
-            if result["status"] == "success":
-                messagebox.showinfo("نجاح", result["message"])
-                self.translator.play_videos(result["matches"])
-            else:
-                messagebox.showerror("خطأ", result["message"])
-        except requests.RequestException as e:
-            messagebox.showerror("خطأ", f"فشل الاتصال بالـ API: {str(e)}")
-
-    def run(self):
-        self.root.mainloop()
-
-class TestSignLanguageTranslator(unittest.TestCase):
-    def setUp(self):
-        self.translator = SignLanguageTranslator()
-
-    def test_normalize_word(self):
-        self.assertEqual(self.translator.normalize_word("كَتَبَ"), "كتب")
-        self.assertEqual(self.translator.normalize_word("أكتب"), "اكتب")
-        self.assertEqual(self.translator.normalize_word(""), "")
-    
-    def test_clean_input(self):
-        self.assertEqual(self.translator.clean_input("كتب 123 book"), "كتب")
-        self.assertEqual(self.translator.clean_input("مرحبا!"), "مرحبا")
-    
-    def test_find_sign_match(self):
-        self.assertIsNotNone(self.translator.find_sign_match("شكر+ا")[0])
-        self.assertIsNotNone(self.translator.find_sign_match("شكرا")[0])
-
 if __name__ == "__main__":
     import uvicorn
-    import threading
-    def start_api():
-        uvicorn.run(app, host="0.0.0.0", port=8000)
-    
-    api_thread = threading.Thread(target=start_api, daemon=True)
-    api_thread.start()
-    
-    gui = SignLanguageGUI()
-    gui.run()
+    port = int(os.getenv("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
