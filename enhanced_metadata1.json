@@ -1,0 +1,165 @@
+{
+  "اختان": {
+    "video_path": "Sanad-Resources/Resized videos/اختان.mp4",
+    "type": "اسم",
+    "synonyms": ["اختين","شقيقتان","شقيتين"]
+  },
+  "اخوان": {
+    "video_path": "Sanad-Resources/Resized videos/اخوان.mp4",
+    "type": "اسم",
+    "synonyms": ["اخوات"]
+  },
+  "انا": {
+    "video_path": "Sanad-Resources/Resized videos/انا.mp4",
+    "type": "ضمير",
+    "synonyms": []
+  },
+  "انت": {
+    "video_path": "Sanad-Resources/Resized videos/انت.mp4",
+    "type": "ضمير",
+    "synonyms": []
+  },
+  "انتم": {
+    "video_path": "Sanad-Resources/Resized videos/انتم.mp4",
+    "type": "ضمير",
+    "synonyms": ["انتو"]
+  },
+  "اولاد": {
+    "video_path": "Sanad-Resources/Resized videos/اولاد.mp4",
+    "type": "اسم",
+    "synonyms": [
+      "أطفال",
+      "صبيان",
+      "ولاد",
+      "عيال"
+    ]
+  },
+  "بابا": {
+    "video_path": "Sanad-Resources/Resized videos/بابا.mp4",
+    "type": "اسم",
+    "synonyms": [
+      "أب",
+      "والد"
+    ]
+  },
+  "بنت": {
+    "video_path": "Sanad-Resources/Resized videos/بنت.mp4",
+    "type": "اسم",
+    "synonyms": [
+      "فتاة",
+      "صبية",
+      "بنوتة"
+    ]
+  },
+  "تمام": {
+    "video_path": "Sanad-Resources/Resized videos/تمام.mp4",
+    "type": "صفة",
+    "synonyms": ["اوك","ماشي","كويس","اوكي","حاضر"]
+  },
+  "جديد": {
+    "video_path": "Sanad-Resources/Resized videos/جديد.mp4",
+    "type": "صفة",
+    "synonyms": ["حديث","جديدة","مودرن","حديثة"]
+  },
+  "حزين": {
+    "video_path": "Sanad-Resources/Resized videos/حزين.mp4",
+    "type": "صفة",
+    "synonyms": ["زعلان",
+                "مكتئب","محبط","مكتئبة","محبطة",
+                "زعلانة","متضايق","متضايقة","تعيس","تعيسة"]
+  },
+  "زواج": {
+    "video_path": "Sanad-Resources/Resized videos/زواج.mp4",
+    "type": "فعل",
+    "synonyms": ["زفاف","عقد قران","جواز","فرح"]
+  },
+  "سعيد": {
+    "video_path": "Sanad-Resources/Resized videos/سعيد.mp4",
+    "type": "صفة",
+    "synonyms": ["مبسوط",
+                "مسرور","فرحان","مسرورة","فرحانة",
+                "مبسوطة","مسرورين","فرحانين",
+                "مسرورين","فرحانين"]
+  },
+  "شغل": {
+    "video_path": "Sanad-Resources/Resized videos/شغل.mp4",
+    "type": "فعل",
+    "synonyms": ["عمل","وظيفة","شغلانة"]
+  },
+  "شكرا": {
+    "video_path": "Sanad-Resources/Resized videos/شكرا.mp4",
+    "type": "عبارة",
+    "synonyms": ["تسلم","تسلمي","مشكور","مشكورة"]
+  },
+  "صادق": {
+    "video_path": "Sanad-Resources/Resized videos/صادق.mp4",
+    "type": "صفة",
+    "synonyms": []
+  },
+  "ضعيف": {
+    "video_path": "Sanad-Resources/Resized videos/ضعيف.mp4",
+    "type": "صفة",
+    "synonyms": ["هزيل","نحيف","ضعيفة","نحيفة"]
+  },
+  "طفل رضيع": {
+    "video_path": "Sanad-Resources/Resized videos/طفل رضيع.mp4",
+    "type": "اسم",
+    "synonyms": [
+      "رضيع",
+      "طفل","مولود",
+      "طفل صغير",
+      "طفل حديث الولادة","بيبي","نونو"
+    ]
+  },
+  "قديم": {
+    "video_path": "Sanad-Resources/Resized videos/قديم.mp4",
+    "type": "صفة",
+    "synonyms": []
+  },
+  "قوي": {
+    "video_path": "Sanad-Resources/Resized videos/قوي.mp4",
+    "type": "صفة",
+    "synonyms": []
+  },
+  "كذاب": {
+    "video_path": "Sanad-Resources/Resized videos/كداب.mp4",
+    "type": "صفة",
+    "synonyms": ["كداب"]
+  },
+  "كيف حالك": {
+    "video_path": "Sanad-Resources/Resized videos/كيف حالك.mp4",
+    "type": "عبارة",
+    "synonyms": ["ازيك","عامل اي","اخبارك"]
+  },
+  "ماما": {
+    "video_path": "Sanad-Resources/Resized videos/ماما.mp4",
+    "type": "اسم",
+    "synonyms": [
+      "أم",
+      "والدة"
+    ]
+  },
+  "ناس": {
+    "video_path": "Sanad-Resources/Resized videos/ناس.mp4",
+    "type": "اسم",
+    "synonyms": [
+      "جماعة",
+      "أشخاص"
+    ]
+  },
+  "هو": {
+    "video_path": "Sanad-Resources/Resized videos/هو.mp4",
+    "type": "ضمير",
+    "synonyms": []
+  },
+  "هي": {
+    "video_path": "Sanad-Resources/Resized videos/هي.mp4",
+    "type": "ضمير",
+    "synonyms": []
+  },
+  "ولد": {
+    "video_path": "Sanad-Resources/Resized videos/ولد.mp4",
+    "type": "اسم",
+    "synonyms": ["فتى","شاب","صبي","ولد صغير"]
+  }
+}
