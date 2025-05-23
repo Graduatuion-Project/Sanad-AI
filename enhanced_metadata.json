@@ -1,31 +1,32 @@
 {
   "اختان": {
-    "video_path": "Sanad-Resources/Resized videos/اختان.mp4",
+    "main_word": "اختان",
+    "video_path": "https://drive.google.com/uc?export=download&id=1QN5tFXkBFFUo7dNLstJQ-2fs6_FHNRu1",
     "type": "اسم",
-    "synonyms": ["اختين","شقيقتان","شقيتين"]
+    "synonyms": ["اختين","شقيقتان","شقيقتين"]
   },
   "اخوان": {
-    "video_path": "Sanad-Resources/Resized videos/اخوان.mp4",
+    "video_path": "https://drive.google.com/uc?export=download&id=17gWI-hVnYMQ4KKpq7PJAbUCCfmtn_WzS",
     "type": "اسم",
-    "synonyms": ["اخوات"]
+    "synonyms": ["اخوات", "اخوة"]
   },
   "انا": {
-    "video_path": "Sanad-Resources/Resized videos/انا.mp4",
+    "video_path": "https://drive.google.com/uc?export=download&id=1tZrWf7pDuJMVTg0g4PB_Jp_X2h3dj5-m",
     "type": "ضمير",
     "synonyms": []
   },
   "انت": {
-    "video_path": "Sanad-Resources/Resized videos/انت.mp4",
+    "video_path": "https://drive.google.com/uc?export=download&id=1tdIpfmLGYacCLx3tL9klWhlAo3RdB4eO",
     "type": "ضمير",
     "synonyms": []
   },
   "انتم": {
-    "video_path": "Sanad-Resources/Resized videos/انتم.mp4",
+    "video_path": "https://drive.google.com/uc?export=download&id=1-JlD7t3KA2j3fPGiIgjIX2JxdlB7rg5z",
     "type": "ضمير",
     "synonyms": ["انتو"]
   },
   "اولاد": {
-    "video_path": "Sanad-Resources/Resized videos/اولاد.mp4",
+    "video_path": "https://drive.google.com/uc?export=download&id=1ckGMMdUrYgzfT2QnTQwhKaDx6FsRGhBn",
     "type": "اسم",
     "synonyms": [
       "أطفال",
@@ -35,7 +36,7 @@
     ]
   },
   "بابا": {
-    "video_path": "Sanad-Resources/Resized videos/بابا.mp4",
+    "video_path": "https://drive.google.com/uc?export=download&id=1IiWvJEUqQvJycJB85xMKjT5qk9KkNUU_",
     "type": "اسم",
     "synonyms": [
       "أب",
@@ -43,7 +44,7 @@
     ]
   },
   "بنت": {
-    "video_path": "Sanad-Resources/Resized videos/بنت.mp4",
+    "video_path": "https://drive.google.com/uc?export=download&id=1-wG67wt9v0JmWgZCx_2ZNbcTyCvPP0iF",
     "type": "اسم",
     "synonyms": [
       "فتاة",
@@ -52,29 +53,29 @@
     ]
   },
   "تمام": {
-    "video_path": "Sanad-Resources/Resized videos/تمام.mp4",
+    "video_path": "https://drive.google.com/uc?export=download&id=1R04K8jU0Yp9W78-4hDAqtKwJXCBW_f8f",
     "type": "صفة",
     "synonyms": ["اوك","ماشي","كويس","اوكي","حاضر"]
   },
   "جديد": {
-    "video_path": "Sanad-Resources/Resized videos/جديد.mp4",
+    "video_path": "https://drive.google.com/uc?export=download&id=10sBbDrZVT0nV2ki06Jn4gHaGv8LL_zQS",
     "type": "صفة",
     "synonyms": ["حديث","جديدة","مودرن","حديثة"]
   },
   "حزين": {
-    "video_path": "Sanad-Resources/Resized videos/حزين.mp4",
+    "video_path": "https://drive.google.com/uc?export=download&id=1-487VhOIakmTmCrj6YkiFc7UTCLHYO3J",
     "type": "صفة",
     "synonyms": ["زعلان",
                 "مكتئب","محبط","مكتئبة","محبطة",
                 "زعلانة","متضايق","متضايقة","تعيس","تعيسة"]
   },
   "زواج": {
-    "video_path": "Sanad-Resources/Resized videos/زواج.mp4",
+    "video_path": "https://drive.google.com/uc?export=download&id=1_vNWjl1j_J4IBBK1P4uTQegXQLiojFfC",
     "type": "فعل",
     "synonyms": ["زفاف","عقد قران","جواز","فرح"]
   },
   "سعيد": {
-    "video_path": "Sanad-Resources/Resized videos/سعيد.mp4",
+    "video_path": "https://drive.google.com/uc?export=download&id=1_9Wb9NkzTyxIyJqBmVz5J-fbKlpT7ef9",
     "type": "صفة",
     "synonyms": ["مبسوط",
                 "مسرور","فرحان","مسرورة","فرحانة",
@@ -82,27 +83,27 @@
                 "مسرورين","فرحانين"]
   },
   "شغل": {
-    "video_path": "Sanad-Resources/Resized videos/شغل.mp4",
+    "video_path": "https://drive.google.com/uc?export=download&id=1SmzJbmJWXGN7IO3rxVxusu1U7GzftQNH",
     "type": "فعل",
     "synonyms": ["عمل","وظيفة","شغلانة"]
   },
   "شكرا": {
-    "video_path": "Sanad-Resources/Resized videos/شكرا.mp4",
+    "video_path": "https://drive.google.com/uc?export=download&id=1EaZeR2XmrjiuebrUr4QP8_VYi89ha8zP",
     "type": "عبارة",
     "synonyms": ["تسلم","تسلمي","مشكور","مشكورة"]
   },
   "صادق": {
-    "video_path": "Sanad-Resources/Resized videos/صادق.mp4",
+    "video_path": "https://drive.google.com/uc?export=download&id=1CRBG90NtmmGB_hxQshFpYynCMKhNWbit",
     "type": "صفة",
     "synonyms": []
   },
   "ضعيف": {
-    "video_path": "Sanad-Resources/Resized videos/ضعيف.mp4",
+    "video_path": "https://drive.google.com/uc?export=download&id=1Ni4iec3-wNG1RMJaePC4Bal4Hq87IC2N",
     "type": "صفة",
     "synonyms": ["هزيل","نحيف","ضعيفة","نحيفة"]
   },
   "طفل رضيع": {
-    "video_path": "Sanad-Resources/Resized videos/طفل رضيع.mp4",
+    "video_path": "https://drive.google.com/uc?export=download&id=1bYVTPvDlozhnTzzxLFhPHfb3n472i-RJ",
     "type": "اسم",
     "synonyms": [
       "رضيع",
@@ -112,27 +113,27 @@
     ]
   },
   "قديم": {
-    "video_path": "Sanad-Resources/Resized videos/قديم.mp4",
+    "video_path": "https://drive.google.com/uc?export=download&id=1FLhwpjXLChgTLLvYljNjtVpF6kPrjPfT",
     "type": "صفة",
     "synonyms": []
   },
   "قوي": {
-    "video_path": "Sanad-Resources/Resized videos/قوي.mp4",
+    "video_path": "https://drive.google.com/uc?export=download&id=1m63R6YVTJon5luikYttAexSrShFWBbXD",
     "type": "صفة",
     "synonyms": []
   },
   "كذاب": {
-    "video_path": "Sanad-Resources/Resized videos/كداب.mp4",
+    "video_path": "https://drive.google.com/uc?export=download&id=1rkrOgubg-eO1j8DZj_i3UDR0gIOpLtIa",
     "type": "صفة",
-    "synonyms": ["كداب"]
+    "synonyms": [ "كاذب","كداب"]
   },
   "كيف حالك": {
-    "video_path": "Sanad-Resources/Resized videos/كيف حالك.mp4",
+    "video_path": "https://drive.google.com/uc?export=download&id=1TVRHhHLF6bGVzon122ZePCXhAUjrxQoN",
     "type": "عبارة",
     "synonyms": ["ازيك","عامل اي","اخبارك"]
   },
   "ماما": {
-    "video_path": "Sanad-Resources/Resized videos/ماما.mp4",
+    "video_path": "https://drive.google.com/uc?export=download&id=1-EfY9bHeapgdJxPYTbjxSyfnfuuHjjmi",
     "type": "اسم",
     "synonyms": [
       "أم",
@@ -140,7 +141,7 @@
     ]
   },
   "ناس": {
-    "video_path": "Sanad-Resources/Resized videos/ناس.mp4",
+    "video_path": "https://drive.google.com/uc?export=download&id=1AFALNIYdJSVSguRORHUYQHynvFNKszeF",
     "type": "اسم",
     "synonyms": [
       "جماعة",
@@ -148,17 +149,17 @@
     ]
   },
   "هو": {
-    "video_path": "Sanad-Resources/Resized videos/هو.mp4",
+    "video_path": "https://drive.google.com/uc?export=download&id=1ACTC_uXoq6NtlEU1BeqoclohzJY6DvLj",
     "type": "ضمير",
     "synonyms": []
   },
   "هي": {
-    "video_path": "Sanad-Resources/Resized videos/هي.mp4",
+    "video_path": "https://drive.google.com/uc?export=download&id=147Nk4FQEN-ceJ-OwQC1dgYsUwwanC73c",
     "type": "ضمير",
     "synonyms": []
   },
   "ولد": {
-    "video_path": "Sanad-Resources/Resized videos/ولد.mp4",
+    "video_path": "https://drive.google.com/uc?export=download&id=15-78NXY6bYZ_su5ht1zJLeIsKk6mtH6G",
     "type": "اسم",
     "synonyms": ["فتى","شاب","صبي","ولد صغير"]
   }
