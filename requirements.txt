@@ -24,3 +24,8 @@ typing_extensions==4.13.2
 urllib3==2.3.0
 uvicorn==0.34.2
 wheel==0.45.1
+httpx==0.27.0
+python-multipart==0.0.9
+gunicorn==21.2.0
+python-dotenv==1.0.1
+mangum==0.20.0
