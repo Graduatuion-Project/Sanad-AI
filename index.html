@@ -44,11 +44,11 @@
             const sentence = document.getElementById("sentence").value;
             const messageDiv = document.getElementById("message");
             const videoContainer = document.getElementById("video-container");
-            videoContainer.innerHTML = ""; // إزالة الفيديوهات السابقة
+            videoContainer.innerHTML = ""; 
 
             try {
                 
-                const response = await fetch("https://sanad-api.onrender.com/translate", {
+                const response = await fetch("http://45.88.223.182:2000/translate", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ sentence })
