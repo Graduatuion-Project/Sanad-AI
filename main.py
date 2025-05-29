@@ -5,11 +5,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, JSONResponse
 from pydantic import BaseModel
-try:
-    from farasa.segmenter import FarasaSegmenter
-    FARASA_AVAILABLE = True
-except ImportError:
-    FARASA_AVAILABLE = False
+from farasa.segmenter import FarasaSegmenter
 
 app = FastAPI(title="Sanad Sign Language Translator API")
 
@@ -29,63 +25,12 @@ class SegmentRequest(BaseModel):
     text: str
 
 class SignLanguageTranslator:
-    signs_db = None
-    farasa = None
-    stop_words = None
 
     def __init__(self):
-        if SignLanguageTranslator.signs_db is None:
-            SignLanguageTranslator.signs_db = self.load_dictionary()
-        self.signs_db = SignLanguageTranslator.signs_db
-
-        if FARASA_AVAILABLE and SignLanguageTranslator.farasa is None:
-            try:
-                SignLanguageTranslator.farasa = FarasaSegmenter(interactive=True)
-            except Exception as e:
-                print(f"⚠ فشل تهيئة Farasa: {str(e)}")
-                SignLanguageTranslator.farasa = None
-        self.farasa = SignLanguageTranslator.farasa
-
-        if SignLanguageTranslator.stop_words is None:
-            SignLanguageTranslator.stop_words = self.load_stop_words()
-        self.stop_words = SignLanguageTranslator.stop_words
-
+        self.signs_db = json.load(open("enhanced_metadata.json", "r", encoding="utf-8"))
+        self.stop_words = set(open("stop words.txt", "r", encoding="utf-8").read().splitlines())
+        self.farasa = FarasaSegmenter(interactive=True)
         self.setup_synonym_map()
-
-    def load_dictionary(self):
-        data = {}
-        try:
-            with open("enhanced_metadata.json", "r", encoding="utf-8") as f:
-                data = json.load(f)
-        except Exception:
-            pass
-        try:
-            with open("enhanced_metadata1.json", "r", encoding="utf-8") as f:
-                local_data = json.load(f)
-                for word, info in local_data.items():
-                    if word not in data:
-                        data[word] = info
-                    else:
-                        if not data[word].get("video_path"):
-                            data[word]["video_path"] = info.get("video_path", "VIDEO_PLACEHOLDER")
-        except Exception:
-            pass
-        if not data:
-            print("⚠ ملف البيانات فارغ")
-            return {}
-        return data
-
-    def load_stop_words(self):
-        stop_words = set()
-        try:
-            with open("stop words.txt", "r", encoding="utf-8") as f:
-                for line in f:
-                    word = line.strip()
-                    if word:
-                        stop_words.add(word)
-        except Exception as e:
-            print(f"⚠ فشل تحميل stop words.txt: {str(e)}")
-        return stop_words
 
     def clean_input(self, sentence):
         sentence = re.sub(r'[^\u0600-\u06FF\s]', '', sentence)
@@ -129,10 +74,10 @@ class SignLanguageTranslator:
 
     def process_sentence(self, sentence):
         sentence = self.clean_input(sentence)
+
         if not sentence.strip():
             return {"status": "error", "message": "الجملة غير صالحة"}
-        if not self.farasa:
-            return {"status": "error", "message": "Farasa غير متاح على هذا السيرفر"}
+
         try:
             result = self.farasa.segment(sentence)
             tokens = []
@@ -140,6 +85,7 @@ class SignLanguageTranslator:
                 tokens.extend(segment.split('+'))
         except Exception as e:
             return {"status": "error", "message": f"فشل تقطيع Farasa: {str(e)}"}
+        
         fixed_tokens = []
         i = 0
         while i < len(tokens):
@@ -197,13 +143,13 @@ class SignLanguageTranslator:
 
 @app.post("/translate")
 async def translate_sentence(request: TranslateRequest):
-    translator = SignLanguageTranslator()
+    global translator
     result = translator.process_sentence(request.sentence)
     return JSONResponse(content=result)
 
 @app.post("/segment")
 async def segment_text(request: SegmentRequest):
-    translator = SignLanguageTranslator()
+    global translator
     if not translator.farasa:
         raise HTTPException(status_code=500, detail="Farasa غير متاح على هذا السيرفر")
     try:
@@ -218,6 +164,11 @@ async def segment_text(request: SegmentRequest):
 @app.get("/")
 async def read_index():
     return FileResponse("index.html")
+
+@app.on_event("startup")
+async def startup_event():
+    global translator
+    translator = SignLanguageTranslator()
 
 if __name__ == "__main__":
     import uvicorn
