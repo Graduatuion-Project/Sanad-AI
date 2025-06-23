@@ -27,7 +27,7 @@ class SegmentRequest(BaseModel):
 class SignLanguageTranslator:
 
     def __init__(self):
-        self.signs_db = json.load(open("enhanced_metadata.json", "r", encoding="utf-8"))
+        self.signs_db = json.load(open("version2.json", "r", encoding="utf-8"))
         self.stop_words = set(open("stop words.txt", "r", encoding="utf-8").read().splitlines())
         self.farasa = FarasaSegmenter(interactive=True)
         self.setup_synonym_map()
