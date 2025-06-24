@@ -1,8 +1,534 @@
 {
+
+    "جنوب":{
+        "main_word": "جنوب",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/Ganoob_default.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "غرب":{
+        "main_word": "غرب",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/ghrb_default.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "شمال":{
+        "main_word": "شمال",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/shamal_default.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "شرق":{
+        "main_word": "شرق",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/shr2_default.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "يمين":{
+        "main_word": "يمين",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/ymeen_default.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "يسار":{
+        "main_word": "يسار",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/ysar_default.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "أعلى":{
+        "main_word": "أعلى",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/A3la.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "أسفل":{
+        "main_word": "أسفل",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/Asfl_default.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+
+
+    "القاهرة":{
+        "main_word": "القاهرة",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/Elqahera.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "جيزة":{
+        "main_word": "جيزة",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/Giza.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "اسماعيلية":{
+        "main_word": "اسماعيلية",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/ismailia_default.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "الاقصر":{
+        "main_word": "الاقصر",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/luxor_default.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "المنصورة":{
+        "main_word": "المنصورة",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/mansoura_default.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+        "بورسعيد":{
+        "main_word": "بورسعيد",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/porsaid_default.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+        "طنطا":{
+        "main_word": "طنطا",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/tanta_default.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+        "دمياط":{
+        "main_word": "دمياط",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/Domyat_default.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+
+    "اخين":{
+        "main_word": "أخين",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/Akheen.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "جار":{
+        "main_word": "جار",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/Gar.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "جديد":{
+        "main_word": "جديد",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/gedeed.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+
+    
+    "هاكر":{
+        "main_word": "هاكر",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/hacker_default.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "حزين":{
+        "main_word": "حزين",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/hazeen.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "هو":{
+        "main_word": "هو",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/Hewa.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "هي":{
+        "main_word": "هي",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/Heya.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "كريم":{
+        "main_word": "كريم",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/Kareem.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "لطف":{
+        "main_word": "لطف",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/lotf.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "السلامة":{
+        "main_word": "السلامة",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/m3%20elsalama_default.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "ماما":{
+        "main_word": "ماما",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/Mama.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "مندوب":{
+        "main_word": "مندوب",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/Mandob.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "مريض":{
+        "main_word": "الاقصر",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/mareed_default.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "مرتاح":{
+        "main_word": "مرتاح",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/Mertah.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "مغترب":{
+        "main_word": "مغترب",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/Moghtareb.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "مقيم":{
+        "main_word": "مقيم",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/moqeem_default.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "ناس":{
+        "main_word": "ناس",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/Nas.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "اختان":{
+        "main_word": "اختان",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/okhtan.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "فقير":{
+        "main_word": "فقير",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/Poor.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+
+    "قوي":{
+        "main_word": "قوي",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/qawy.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "قطة":{
+        "main_word": "قطة",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/qota_default.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "متخلف":{
+        "main_word": "متخلف",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/retarded.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "غني":{
+        "main_word": "غني",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/Rich.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "رقمك":{
+        "main_word": "رقمك",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/rkmk_default.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "صديق":{
+        "main_word": "صديق",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/sadeek.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "صادق":{
+        "main_word": "صادق",
+        "video_path": "hhttp://sanad.runasp.net/media/Animation-Girl/Sadeq.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "سعيد":{
+        "main_word": "سعيد",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/saeed.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "صحة":{
+        "main_word": "صحة",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/Seha.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+
+    "صم":{
+        "main_word": "صم",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/Som.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "يعمل":{
+        "main_word": "يعمل",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/t3ml_default.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+
+    "رضيع":{
+        "main_word": "رضيع",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/Tefl%20Radea.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "ولد_بنت":{
+        "main_word": "ولد",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/Walad.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "يدرس":{
+        "main_word": "يدرس",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/Yata3alam.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "يأكل":{
+        "main_word": "يأكل",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/yakol_default.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "يموت":{
+        "main_word": "يموت",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/yamoot_default.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "يسكت":{
+        "main_word": "يسكت",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/yaskot_default.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "يجلس":{
+        "main_word": "يجلس",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/ygls_default.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+
+    "يخطئ":{
+        "main_word": "يخطئ",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/yokht2_default.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "يكرر":{
+        "main_word": "يكرر",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/yokrr_default.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "يساعد":{
+        "main_word": "يساعد",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/yosa3ed_default.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "يسافر":{
+        "main_word": "يسافر",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/yosafr_default.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "يترجم":{
+        "main_word": "يترجم",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/yotrgm_default.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "انت":{
+        "main_word": "انت",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/you_default.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "يصعد":{
+        "main_word": "يصعد",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/ys3d_default.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+
+    "زواج":{
+        "main_word": "زواج",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/Zawag.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "ولد_ولد":{
+        "main_word": "ولد",
+        "video_path": "http://sanad.runasp.net/media/Animation-boy/boy.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "اهلا":{
+        "main_word": "اهلا",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/ahlan.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "يحمي":{
+        "main_word": "يحمي",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/Ya7my.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "يسأل":{
+        "main_word": "يسأل",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/Yas2al.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "يستيقظ":{
+        "main_word": "يستيقظ",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/Yastaykez.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+
     "عافية":{
         "main_word": "عافية",
-        "video_path": "https://sanad.runasp.net/media/Animation-Girl/gedeed.glb",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/Afia.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "أولاد":{
+        "main_word": "أولاد",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/Awlad.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "بابا":{
+        "main_word": "بابا",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/Baba.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "بخيل":{
+        "main_word": "بخيل",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/Bakheel.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "بكم":{
+        "main_word": "بكم",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/Bokm.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "يبكي":{
+        "main_word": "يبكي",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/Cry.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "كلب":{
+        "main_word": "كلب",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/Dog.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+
+    "أعطني":{
+        "main_word": "أعطني",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/A3tny_default.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "قديم":{
+        "main_word": "قديم",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/Adeem.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "عالم":{
+        "main_word": "عالم",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/Alem_default.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "أسف":{
+        "main_word": " أسف",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/Ana_asf_default.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "أنا":{
+        "main_word": "أنا",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/Ana_default.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "أنتم":{
+        "main_word": "أنتم",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/Antom_default.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+
+    "أتصل بك":{
+        "main_word": "أتصل بك",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/Atsl_bk_default.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "أين":{
+        "main_word": "أين",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/Ayn_default.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "ضعيف":{
+        "main_word": "ضعيف",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/Daeef.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+
+    "فهد":{
+        "main_word": "فهد",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/Fahd_default.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "في المستشفى":{
+        "main_word": "في المستشفى",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/Fe_el_mostashfa_default.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "السلام عليكم":{
+        "main_word": "السلام عليكم",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/Elsalam_alykom_default.glb",
+        "type" : "اسم",
+        "synonyms":[]
+    },
+    "سمكة":{
+        "main_word": "سمكة",
+        "video_path": "http://sanad.runasp.net/media/Animation-Girl/Fish.glb",
         "type" : "اسم",
         "synonyms":[]
     }
+
 }
