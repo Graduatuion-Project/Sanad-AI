@@ -1,27 +1,18 @@
-# استخدم نسخة بايثون مناسبة
 FROM python:3.11-slim
 
-# ثبت Java (ضروري لـ Farasa)
-RUN apt-get update && \
-    apt-get install -y openjdk-17-jre-headless && \
-    apt-get clean
+# ثبت Java
+RUN apt-get update && apt-get install -y openjdk-17-jre-headless && apt-get clean
 
-# اضبط JAVA_HOME
 ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
 ENV PATH="$JAVA_HOME/bin:$PATH"
 
-# مجلد العمل
 WORKDIR /app
 
-# ثبت الباكدج
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# انسخ باقي المشروع
 COPY . .
 
-# اعرض البورت
-EXPOSE 8000
+EXPOSE 8080
 
-# أمر التشغيل
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]
